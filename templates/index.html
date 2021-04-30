@@ -1,0 +1,54 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Add A New Cafe{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/styles.css')}}">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">TUDUWAT</a>
+  <form class="form-inline" action="{{ url_for('home') }}" method="POST">
+      {{ wtf.quick_form(form, novalidate=True) }}
+  </form>
+</nav>
+
+{% for task in tasks: %}
+    <div class="list-group">
+        {% if task.id % 2 == 0: %}
+            <li class="list-group-item list-group-item-action list-group-item-info">
+                {% if task.is_completed: %}
+                    <div class="todo-text"><span class="check_mark">&#10003;</span>&nbsp;&nbsp; {{ task.task }}</div>
+                    <button onclick="window.location='{{ url_for('check_task', id=task.id)  }}';" class="button check_button">UNDO</button>
+                {% else: %}
+                    <div class="todo-text"><span class="box">&nbsp</span>&nbsp;&nbsp; {{ task.task }}</div>
+                    <button onclick="window.location='{{ url_for('check_task', id=task.id)  }}';" class="button check_button">DONE</button>
+                {% endif %}
+                <button onclick="window.location='{{ url_for('delete_task', id=task.id) }}';" class="button delete_button">DELETE TASK</button>
+            </li>
+        {% else: %}
+            <li class="list-group-item list-group-item-action list-group-item-light">
+                {% if task.is_completed: %}
+                    <div class="todo-text"><span class="check_mark">&#10003;</span>&nbsp;&nbsp; {{ task.task }}</div>
+                    <button onclick="window.location='{{ url_for('check_task', id=task.id)  }}';" class="button check_button">UNDO</button>
+
+                {% else: %}
+                    <div class="todo-text"><span class="box">&nbsp</span>&nbsp;&nbsp; {{ task.task }}</div>
+                    <button onclick="window.location='{{ url_for('check_task', id=task.id)  }}';" class="button check_button">DONE</button>
+
+                {% endif %}
+                <button onclick="window.location='{{ url_for('delete_task', id=task.id) }}';" class="button delete_button">DELETE TASK</button>
+            </li>
+
+        {% endif %}
+    </div>
+{% endfor %}
+
+{% endblock %}

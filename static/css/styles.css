@@ -1,0 +1,117 @@
+body {
+    background-color: #eeeeee;
+}
+
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222831 !important;
+    border-radius: 0;
+}
+
+
+.navbar-brand {
+   margin-right: auto;
+   font-style: 'Montserrat', sans-serif;
+   font-weight: 900;
+   font-size: 4rem;
+   color: #4ecca3 !important;
+   padding: 4rem 0 6rem 3rem;
+}
+
+.form-inline {
+    margin-right: 6rem;
+}
+
+.btn-dark {
+    background-color: #363636 !important;
+}
+
+.list-group {
+    margin: 2rem;
+}
+
+.list-group-item {
+    display: flex;
+    font-style: 'Montserrat', sans-serif;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 2rem;
+    width: 98%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-label {
+    display: none;
+}
+
+.list-group-item-info {
+    background-color: #393e46 !important;
+    color: white !important;
+
+}
+
+.list-group-item-light {
+    background-color: #f8f1f1 !important;
+}
+
+
+.button {
+    font-size: 1.5rem;
+    border: 1px solid;
+    text-decoration: none;
+    border-radius: 3px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: transparent;
+    padding: 1.2rem 2rem;
+}
+
+.button:hover {
+    text-decoration: none;
+    font-size: 1.6rem;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.check_button {
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+.check_button:hover {
+    border: none;
+    background-color: #4ecca3;
+    color: #f8f1f1;
+}
+
+.check_button:active {
+    font-size: 1.2rem;
+    transform: scale(.9);
+    box-shadow: 0 3px 15px -2px;
+}
+
+.delete_button:hover {
+    border: none;
+    background-color: #be0000;
+    color: #f8f1f1;
+}
+
+.box {
+    border: 3px solid #e84545;
+    border-radius: 3px;
+    height: 3rem;
+    font-size: 2.5rem;
+    padding-left: 2.4rem;
+}
+
+.check_mark {
+  color: #4ecca3;
+  font-size: 3rem;
+}
